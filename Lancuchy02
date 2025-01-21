@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+void kopiuj(char *tab1, char *tab2);
+//tab1 to tab2 bez spacji, tab2 ma sie nie zmienic
+
+int main(void){
+    
+    char tablica1[12]; //albo malloc
+    char tablica2[] = "Dzień dobry"; 
+    
+    kopiuj(tablica1,tablica2);
+    
+    printf("Tablica 1: %s",tablica1);
+    printf("\n");
+    printf("Tablica 2: %s",tablica2);
+    
+    return 0;
+}
+
+void kopiuj(char *tab1, char *tab2){
+    
+    while(*tab2){
+        *tab1 = *tab2;
+        if(*tab2 == ' '){
+        *tab1 = '_';
+        }
+        tab1++;
+        tab2++;
+    }
+    *tab1 = '\0';
+}
