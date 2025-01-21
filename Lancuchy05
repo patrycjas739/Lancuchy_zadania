@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+
+void odwroc(char *str);
+
+int main(void){
+    
+    char lancuch[] = "Patrycja";
+    
+    printf("%s\n",lancuch);
+    
+    odwroc(lancuch);
+    
+    printf("%s\n",lancuch);
+    
+    return 0;
+}
+
+void odwroc(char *str){
+    int dlugosc = strlen(str);
+    int pierwszy = 0;
+    int ostatni = dlugosc - 1;
+    char temp;
+    
+    while(pierwszy<ostatni){
+        temp = str[pierwszy];
+        str[pierwszy] = str[ostatni];
+        str[ostatni] = temp;
+        
+        pierwszy++;
+        ostatni--;
+    }
+}
