@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+
+int palindrom(char *str);
+
+int main(void){
+    
+    char wyraz[] = "madam";
+    char wyraz2[] = "jabłko";
+    
+   int wynik = palindrom(wyraz);
+    int wynik2 = palindrom(wyraz2);
+   
+ if(wynik == 1) printf("Wyraz 1 jest palindromem\n"); else printf("Wyraz 1 nie jest palindromem\n");
+ 
+  if(wynik2 == 1) printf("Wyraz 2 jest palindromem\n"); else printf("Wyraz 2 nie jest palindromem\n");
+    
+    return 0;
+}
+
+int palindrom(char *str){
+    
+   int dlugosc = strlen(str);
+   int i=0;
+   int j = dlugosc-1;
+    
+    while (i < j) {      
+        if (str[i] != str[j]) {
+            return 0;     
+        }
+        i++;
+        j--;
+    }
+    return 1;    
+}
+  
