@@ -5,7 +5,7 @@ void kopiuj(char *tab1, char *tab2);
 
 int main(void){
     
-    char tablica1[12]; //albo malloc
+    char tablica1[12];
     char tablica2[] = "Dzień dobry"; 
     
     kopiuj(tablica1,tablica2);
