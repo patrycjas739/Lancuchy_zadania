@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h> //do malloca
+#include <string.h> //do strlen
+
+
+
+void merger(char *s3, const char *s1, const char *s2);
+//umiesc w s3 napis z s1 bez \0 a potem napis z s2
+
+
+int main(void){
+    
+    char str1[] = "Piękny ";
+    char str2[] = "Kotek";
+    char *str3 = malloc((strlen(str1) + strlen(str2) + 1)*sizeof(char));
+    // dlugosc str1 + dlugosc str2 z '\0'
+    
+    merger(str3,str1,str2);
+    
+    printf("%s\n\n",str1);
+    printf("%s\n\n",str2);
+    printf("%s\n\n",str3);
+    
+    free(str3);
+    return 0;
+}
+
+void merger(char *s3, const char *s1, const char *s2){
+    
+    while(*s1){
+        *s3 = *s1;
+        s1++;
+        s3++;
+    }
+    
+    while(*s2){
+        *s3 = *s2;
+        s2++;
+        s3++;
+    }
+    *s3 = '\0';
+}
