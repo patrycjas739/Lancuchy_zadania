@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+char *szukaj_znaku(char *tab, char znak);
+
+int main(void){
+    
+    char lancuch[]="Kotek";
+    char literka = 'K';
+    
+    char *wynik = szukaj_znaku(lancuch,literka);
+    
+ if (wynik) {
+        printf("Znak '%c' znaleziony w lancuchu \"%s\" na pozycji: %ld\n", 
+               literka, lancuch, wynik - lancuch+1);
+    } else {
+        printf("Znak '%c' nie wystepuje w lancuchu \"%s\".\n", literka, lancuch);
+    }
+    
+    return 0;
+}
+
+char *szukaj_znaku(char *tab, char znak){
+    
+    while(*tab){
+        if(*tab == znak){
+            return tab;
+        }
+        tab++;
+    }
+    return NULL;
+}
