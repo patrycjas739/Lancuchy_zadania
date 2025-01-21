@@ -7,11 +7,11 @@ int main(void){
     char lancuch[]="Kotek";
     char literka = 'K';
     
-    char *wynik = szukaj_znaku(lancuch,literka);
+    char *indeks = szukaj_znaku(lancuch,literka);
     
- if (wynik) {
+ if (indeks) {
         printf("Znak '%c' znaleziony w lancuchu \"%s\" na pozycji: %ld\n", 
-               literka, lancuch, wynik - lancuch+1);
+               literka, lancuch, indeks - lancuch);
     } else {
         printf("Znak '%c' nie wystepuje w lancuchu \"%s\".\n", literka, lancuch);
     }
